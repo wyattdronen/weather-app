@@ -7,6 +7,9 @@ This application has:
 * a 5-day forcast that displays the date
 * uses local storage and event listener to store previous searches.
 
+* link to site: https://wyattdronen.github.io/weather-app/
+
+
 ![Alt text](./assets/images/weather-app.jpg?raw=true "screenshot")
 
 
