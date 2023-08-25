@@ -89,30 +89,19 @@ let displayWeather = function(weatherData) {
             })
         });
 
-    // save the last city searched
+
     lastCitySearched = weatherData.name;
 
-    // save to the search history using the api's name value for consistancy
-    // this also keeps searches that did not return a result from populating the array
     saveSearchHistory(weatherData.name);
-
-    
 };
 
-// function to save the city search history to local storage
 let saveSearchHistory = function (city) {
     if(!searchHistory.includes(city)){
         searchHistory.push(city);
         $("#search-history").append("<a href='#' class='list-group-item list-group-item-action' id='" + city + "'>" + city + "</a>")
-    } 
-
-    // save the searchHistory array to local storage
-    localStorage.setItem("weatherSearchHistory", JSON.stringify(searchHistory));
-
-    // save the lastCitySearched to local storage
-    localStorage.setItem("lastCitySearched", JSON.stringify(lastCitySearched));
-
-    // display the searchHistory array
+} 
+localStorage.setItem("weatherSearchHistory", JSON.stringify(searchHistory));
+localStorage.setItem("lastCitySearched", JSON.stringify(lastCitySearched));
     loadSearchHistory();
 };
 

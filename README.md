@@ -13,6 +13,8 @@ This application has:
 ![Alt text](./assets/images/weather-app.jpg?raw=true "screenshot")
 
 
-
+## Citation 
+This repo was cited for using local storage and event listeners to store previous searches and display a 5-day forecast. I also refered to this for setting up bootstrap and how to format.
+https://github.com/ThomasCalle/Thomas-Weather-Dashboard/blob/main/Assets/js/javascript.js
 
 
