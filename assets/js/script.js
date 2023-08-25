@@ -8,20 +8,13 @@ let getCityWeather = function(city) {
 
     // make a request to the url
     fetch(apiUrl)
-        
-        .then(function(response) {
-        // request was successful
-            if (response.ok) {
-                response.json().then(function(data) {
-                    displayWeather(data);
-                });
-            // request fails
-            } else {
-                alert("Error: " + response.statusText);
-            }
-        })  
-
-        // alert user if there is no responce from OpenWeather
+     .then(function(response) {
+        if (response.ok) {
+         response.json().then(function(data) {displayWeather(data);
+    });
+        } else 
+        {alert("Error: " + response.statusText);}
+    })  
         .catch(function(error) {
             alert("Unable to connect to OpenWeather");
         })
@@ -130,19 +123,14 @@ let loadSearchHistory = function() {
     }
   };
 
-// load search history from local storage
 loadSearchHistory();
 
-// start page with the last city searched if there is one
 if (lastCitySearched != ""){
     getCityWeather(lastCitySearched);
 }
 
-// event handlers
 $("#search-form").submit(searchSubmitHandler);
 $("#search-history").on("click", function(event){
-    // get the links id value
     let prevCity = $(event.target).closest("a").attr("id");
-    // pass it's id value to the getCityWeather function
     getCityWeather(prevCity);
 });
